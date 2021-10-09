@@ -10,11 +10,35 @@ pip3 install coverage
 #export PYTHONPATH="${PYTHONPATH}:Users/igor/Documents/Research/TestAmplification/library/flair"
 pip3 install -r requirements.txt
 # PYTHONPATH="/Users/igor/Documents/Research/TestAmplification/library" coverage run -m pytest library
-coverage run -m pytest .
+# coverage run -m pytest .
 
 #pip3 install -r dependencies/jina/requirements.txt
 
 #export PYTHONPATH="${PYTHONPATH}:Users/igor/Documents/Research/TestAmplification/dependencies/BERTopic/bertopic"
 # PYTHONPATH="/Users/igor/Documents/Research/TestAmplification/dependencies/TextAttack" coverage run --source=flair -m pytest dependencies/TextAttack
 
-coverage html
+# coverage html
+# mv ./cov_html ./cov_html_flair
+
+
+INPUT=users.txt
+OLDIFS=$IFS
+IFS=','
+[ ! -f $INPUT ] && { echo "$INPUT file not found"; exit 99; }
+while read project src tests github
+do
+	echo "Name : $project"
+	echo "src : $src"
+	echo "tests : $tests"
+	echo "github : $github"
+  
+  git clone "$github"
+  mv $project/$src .
+  mv $project/$tests/* ./tests
+  
+  coverage run --source=flair -m pytest .
+  coverage html
+  mv ./cov_html ./cov_html_$project
+  
+done < $INPUT
+IFS=$OLDIFS
