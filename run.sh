@@ -38,7 +38,7 @@ do
   
   coverage run --source=flair -m pytest .
   coverage html
-  mv ./cov_html ./cov_html_$project
+#   mv ./cov_html ./cov_html_$project
   
 done < $INPUT
 IFS=$OLDIFS
