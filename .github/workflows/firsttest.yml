@@ -31,7 +31,7 @@ jobs:
           
       - name: run tests
         run: |
-          git clone https://github.com/IgorSchittekat/flair.git,
-          cd flair,
-          chmod +x run.sh,
+          git clone https://github.com/IgorSchittekat/flair.git
+          cd flair
+          chmod +x run.sh
           ./run.sh
