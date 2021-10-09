@@ -22,8 +22,5 @@ jobs:
       - name: run tests
         run: |
           echo $PWD
-          ls
-          git clone https://github.com/IgorSchittekat/flair.git
-          cd flair
           chmod +x run.sh
           ./run.sh
