@@ -30,7 +30,7 @@ jobs:
           wget https://raw.githubusercontent.com/IgorSchittekat/MultiProject/main/run.sh
           chmod +x run.sh
       - name: clone library
-        run: git clone https://github.com/${{ env.GITHUB_REPOSITORY }}
+        run: git clone "https://github.com/$GITHUB_REPOSITORY"
         working-directory: ${{env.MY_WORK_DIR}}
       - name: run tests
         run: |
