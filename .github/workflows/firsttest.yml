@@ -36,8 +36,9 @@ jobs:
           ls ${{ github.event.repository.name }}
         working-directory: ${{env.MY_WORK_DIR}}
       - name: run tests
+        working-directory: ${{env.MY_WORK_DIR}}      
         run: |
-          cp ${{ github.event.repository.name }}/users.txt .
+          cp ./${{ github.event.repository.name }}/users.txt .
           ./run.sh
       - name: Archive code coverage results
         uses: actions/upload-artifact@v2
