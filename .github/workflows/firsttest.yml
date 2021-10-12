@@ -2,6 +2,10 @@
 
 name: firsttest
 
+env:
+  MY_WORK_DIR: /home/runner/test-amp
+  
+  
 # Controls when the workflow will run
 on:
   # Allows you to run this workflow manually from the Actions tab
@@ -17,12 +21,20 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v2
-          
+#       - uses: actions/checkout@v2
+      - name: setup env
+        run: |
+          env
+          mkdir ${{env.MY_WORK_DIR}}
+          cd ${{env.MY_WORK_DIR}}
+          wget https://raw.githubusercontent.com/IgorSchittekat/MultiProject/main/run.sh
+          chmod +x run.sh
+      - name: clone library
+        run: git clone https://github.com/${{ env.GITHUB_REPOSITORY }}
+        working-directory: ${{env.MY_WORK_DIR}}
       - name: run tests
         run: |
-          echo $PWD
-          chmod +x run.sh
+          cp ${{ github.event.repository.name }}/users.txt .
           ./run.sh
       - name: Archive code coverage results
         uses: actions/upload-artifact@v2
