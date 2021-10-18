@@ -1,3 +1,4 @@
 TextAttack,textattack,tests,https://github.com/QData/TextAttack.git
 textwiser,textwiser,tests,https://github.com/fidelity/textwiser
 danlp,danlp,tests,https://github.com/alexandrainst/danlp/
+nlp_gym,nlp_gym,tests,https://github.com/rajcscw/nlp-gym/
