@@ -1,1 +1,3 @@
 TextAttack,textattack,tests,https://github.com/QData/TextAttack.git
+textwiser,textwiser,tests,https://github.com/fidelity/textwiser
+danlp,danlp,tests,https://github.com/alexandrainst/danlp/
