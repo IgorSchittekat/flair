@@ -1,1 +1,1 @@
-data-wrangler,datawrangler,tests,https://github.com/ContextLab/data-wrangler
+TextAttack,textattack,tests,https://github.com/QData/TextAttack.git
