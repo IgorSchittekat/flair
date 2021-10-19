@@ -1,1 +1,7 @@
 TextAttack,textattack,tests,https://github.com/QData/TextAttack.git
+textwiser,textwiser,tests,https://github.com/fidelity/textwiser
+danlp,danlp,tests,https://github.com/alexandrainst/danlp/
+nlp_gym,nlp_gym,tests,https://github.com/rajcscw/nlp-gym/
+figur,figur,tests,https://github.com/severinsimmler/figur
+SeqAL,seqal,tests,https://github.com/tech-sketch/SeqAL
+data-wrangler,datawrangler,tests,https://github.com/ContextLab/data-wrangler
